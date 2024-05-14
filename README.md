@@ -1,4 +1,4 @@
-# Andis Dev
+# Tugas STMIK
 ## _Turorial Login Register CRUD Laravel 10_
 
 ## Features
@@ -32,15 +32,17 @@ create database laravel
 
 Install the dependencies and start the server.
 
+##ikuti langkah ini
 run composer update <br>
-run php artisan migrate:fresh <br>
+run php artisan migrate:fresh --seed<br>
 run php artisan serve <br>
 
 open link at your browser
 http://127.0.0.1:8000
 
-## Demo Link
-https://login-register-crud-laravel.andisdev.tech/
+## Akun admin
+email : admin@admin
+password : admin123
 
 ## Screenshoot
 ![logo](https://github.com/AndiSyarif/login-register-crud-laravel-10/blob/main/public/assets/img/ss7.png)
