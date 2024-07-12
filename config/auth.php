@@ -1,5 +1,9 @@
 <?php
 
+use App\Models\Admin;
+use App\Models\User;
+use Illuminate\Foundation\Auth\User as AuthUser;
+
 return [
 
     /*
@@ -40,7 +44,16 @@ return [
             'driver' => 'session',
             'provider' => 'users',
         ],
+    'admin' => [
+        'driver' => 'session',
+        'provider' => 'admin',
     ],
+    'user' => [
+        'driver' => 'session',
+        'provider' => 'user'
+    ]
+    ],
+    
 
     /*
     |--------------------------------------------------------------------------
@@ -64,6 +77,11 @@ return [
             'driver' => 'eloquent',
             'model' => App\Models\User::class,
         ],
+    'admin' => [
+        'driver' => 'eloquent',
+        'model' => app\Models\Admin::class
+    ],
+    
 
         // 'users' => [
         //     'driver' => 'database',

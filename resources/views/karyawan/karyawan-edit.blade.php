@@ -1,5 +1,5 @@
 @extends('template.main')
-@section('title', 'Edit Barang')
+@section('title', 'Edit Karyawan')
 @section('content')
 
 <div class="content-wrapper">
@@ -13,7 +13,7 @@
                 <div class="col-sm-6">
                     <ol class="breadcrumb float-sm-right">
                         <li class="breadcrumb-item"><a href="/">Home</a></li>
-                        <li class="breadcrumb-item"><a href="/barang">Barang</a></li>
+                        <li class="breadcrumb-item"><a href="/karyawan">karyawan</a></li>
                         <li class="breadcrumb-item active">@yield('title')</li>
                     </ol>
                 </div><!-- /.col -->
@@ -31,12 +31,12 @@
                     <div class="card">
                         <div class="card-header">
                             <div class="text-right">
-                                <a href="/barang" class="btn btn-warning btn-sm"><i class="fa-solid fa-arrow-rotate-left"></i>
+                                <a href="/karyawan" class="btn btn-warning btn-sm"><i class="fa-solid fa-arrow-rotate-left"></i>
                                     Back
                                 </a>
                             </div>
                         </div>
-                        <form class="needs-validation" novalidate action="/barang/{{ $barang->id_barang }}" method="POST">
+                        <form class="needs-validation" novalidate action="/karyawan/{{ $karyawan->id }}" method="POST">
                             @csrf
                             @method('PUT')
                             <div class="card-body">
@@ -44,7 +44,7 @@
                                     <div class="col-lg-6">
                                         <div class="form-group">
                                             <label for="name">Name</label>
-                                            <input type="text" name="name" class="form-control @error('name') is-invalid @enderror" id="name" placeholder="Name Barang" value="{{old('name', $barang->name)}}" required>
+                                            <input type="text" name="name" class="form-control @error('name') is-invalid @enderror" id="name" placeholder="Name karyawan" value="{{old('name', $karyawan->name)}}" required>
                                             @error('name')
                                             <span class="invalid-feedback text-danger">{{ $message }}</span>
                                             @enderror
@@ -52,18 +52,9 @@
                                     </div>
                                     <div class="col-lg-6">
                                         <div class="form-group">
-                                            <label for="bahan_baku">Bahan Baku</label>
-                                            <input type="text" name="bahan_baku" class="form-control @error('bahan_baku') is-invalid @enderror" id="bahan_baku" placeholder="Bahan Baku Barang" value="{{old('bahan_baku', $barang->bahan_baku)}}" required>
-                                            @error('bahan_baku')
-                                            <span class="invalid-feedback text-danger">{{ $message }}</span>
-                                            @enderror
-                                        </div>
-                                    </div>
-                                    <div class="col-lg-6">
-                                        <div class="form-group">
-                                            <label for="category">Category</label>
-                                            <input type="text" name="category" class="form-control @error('category') is-invalid @enderror" id="category" placeholder="Category" value="{{old('category', $barang->category)}}" required>
-                                            @error('category')
+                                            <label for="umur">Umur</label>
+                                            <input type="text" name="umur" class="form-control @error('umur') is-invalid @enderror" id="umur" placeholder="umur" value="{{old('umur', $karyawan->umur)}}" required>
+                                            @error('umur')
                                             <span class="invalid-feedback text-danger">{{ $message }}</span>
                                             @enderror
                                         </div>
@@ -72,18 +63,18 @@
                                 <div class="row">
                                     <div class="col-lg-6">
                                         <div class="form-group">
-                                            <label for="supplier">Supplier</label>
-                                            <input type="text" name="supplier" class="form-control @error('supplier') is-invalid @enderror" id="supplier" placeholder="Supplier" value="{{old('supplier', $barang->supplier)}}" required>
-                                            @error('supplier')
+                                            <label for="alamat">Alamat</label>
+                                            <input type="text" name="alamat" class="form-control @error('alamat') is-invalid @enderror" id="alamat" placeholder="alamat" value="{{old('alamat', $karyawan->alamat)}}" required>
+                                            @error('alamat')
                                             <span class="invalid-feedback text-danger">{{ $message }}</span>
                                             @enderror
                                         </div>
                                     </div>
                                     <div class="col-lg-6">
                                         <div class="form-group">
-                                            <label for="stock">Stock</label>
-                                            <input type="number" min="1" name="stock" class="form-control @error('stock') is-invalid @enderror" id="stock" placeholder="Stock" value="{{old('stock', $barang->stock)}}" required>
-                                            @error('stock')
+                                            <label for="gaji">Gaji</label>
+                                            <input type="number" min="1" name="gaji" class="form-control @error('gaji') is-invalid @enderror" id="gaji" placeholder="gaji" value="{{old('gaji', $karyawan->gaji)}}" required>
+                                            @error('gaji')
                                             <span class="invalid-feedback text-danger">{{ $message }}</span>
                                             @enderror
                                         </div>
@@ -92,21 +83,13 @@
                                 <div class="row">
                                     <div class="col-lg-6">
                                         <div class="form-group">
-                                            <label for="price">Price</label>
-                                            <input type="number" name="price" class="form-control @error('price') is-invalid @enderror" id="price" placeholder="Price" value="{{old('price', $barang->price)}}" required>
-                                            @error('price')
+                                            <label for="jabatan">Jabatan</label>
+                                            <input type="number" name="jabatan" class="form-control @error('jabatan') is-invalid @enderror" id="jabatan" placeholder="jabatan" value="{{old('jabatan', $karyawan->jabatan)}}" required>
+                                            @error('jabatan')
                                             <span class="invalid-feedback text-danger">{{ $message }}</span>
                                             @enderror
                                         </div>
                                     </div>
-                                    <div class="col-lg-6">
-                                        <div class="form-group">
-                                            <label for="note">Note</label>
-                                            <textarea name="note" id="note" class="form-control @error('note') is-invalid @enderror" cols="10" rows="5" placeholder="note">{{old('note', $barang->note)}}</textarea>
-                                            @error('note')
-                                            <span class="invalid-feedback text-danger">{{ $message }}</span>
-                                            @enderror
-                                        </div>
                                     </div>
                                 </div>
                             </div>
