@@ -33,7 +33,7 @@ class KaryawanController extends Controller
     {
         $validated = $request->validate([
             'name' => 'required|max:100|unique:karyawan',
-            'umur' => 'required|numeric',
+            'umur' => 'required|numeric|max:100',
             'alamat' => 'required',
             'gaji' => 'required|numeric',
             'jabatan' => 'required',

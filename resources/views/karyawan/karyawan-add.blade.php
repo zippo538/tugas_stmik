@@ -52,7 +52,7 @@
                   <div class="col-lg-6">
                     <div class="form-group">
                       <label for="umur">Umur</label>
-                      <input type="text" name="Umur" class="form-control @error('umur') is-invalid @enderror" id="umur" placeholder="umur" value="{{old('umur')}}" required>
+                      <input type="number" name="umur" class="form-control @error('umur') is-invalid @enderror" id="umur" placeholder="umur" value="{{old('umur')}}" required>
                       @error('umur')
                       <span class="invalid-feedback text-danger">{{ $message }}</span>
                       @enderror
@@ -83,7 +83,7 @@
                   <div class="col-lg-6">
                     <div class="form-group">
                       <label for="jabatan">Jabatan</label>
-                      <input type="number" name="jabatan" class="form-control @error('jabatan') is-invalid @enderror" id="jabatan" placeholder="jabatan" value="{{old('jabatan')}}" required>
+                      <input type="text" name="jabatan" class="form-control @error('jabatan') is-invalid @enderror" id="jabatan" placeholder="jabatan" value="{{old('jabatan')}}" required>
                       @error('jabatan')
                       <span class="invalid-feedback text-danger">{{ $message }}</span>
                       @enderror
